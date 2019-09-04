@@ -1,4 +1,4 @@
-"""
+
 import urllib.request
 
 from selenium import webdriver
@@ -21,8 +21,9 @@ with open('usman.csv', 'w', newline='') as csvfile:
     # for row in table.find_elements_by_css_selector('tr'):
     for table in driver.find_elements_by_xpath('//*[@id="plannedTable"]//tr'):
         wr.writerow([d.text for d in table.find_elements_by_xpath(".//*[ self::th or self::td]")])
-"""
 
+driver.get('http://flow.gassco.no/xlarchive')
+#driver.find_element_by_class_name('accept').click()
 import pandas as pd
 df = pd.read_csv("C:\\Users\\Data Scientist\\PycharmProjects\\final\\usman.csv", encoding="ISO-8859-1")
 
